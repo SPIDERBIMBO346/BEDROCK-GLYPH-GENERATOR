@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bedrock Glyph Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+  <div class="background"></div>
+
+  <div class="app">
+    <header class="header">
+      <h1>BEDROCK GLYPH GENERATOR</h1>
+      <p>Edtra Club</p>
+    </header>
+
+    <section class="toolbar">
+      <input type="file" id="imageUpload" accept="image/png" multiple hidden>
+      <input type="file" id="glyphImport" accept="image/png" hidden>
+
+      <button id="uploadBtn">Subir PNG</button>
+      <button id="importBtn">Importar Glyph</button>
+      <button id="resetBtn">Reset</button>
+      <button id="saveBtn">Guardar Proyecto</button>
+
+      <select id="sheetSelect">
+        <option value="E0">glyph_E0</option>
+        <option value="E1">glyph_E1</option>
+        <option value="E2">glyph_E2</option>
+        <option value="E3">glyph_E3</option>
+        <option value="E4">glyph_E4</option>
+      </select>
+
+      <select id="sizeSelect">
+        <option value="8">8x8</option>
+        <option value="16" selected>16x16</option>
+        <option value="32">32x32</option>
+      </select>
+
+      <button id="downloadTexture">Descargar Textura</button>
+      <button id="downloadAddon">Descargar Addon</button>
+    </section>
+
+    <main class="main-layout">
+      <section class="grid-panel">
+        <div id="glyphGrid"></div>
+      </section>
+
+      <aside class="side-panel">
+        <canvas id="previewCanvas" width="256" height="256"></canvas>
+
+        <div class="info-box">
+          <h3>INFORMACIÓN</h3>
+          <p>Slot: <span id="slotText">-</span></p>
+          <p>Unicode: <span id="unicodeText">-</span></p>
+          <p>Glyph: <span id="glyphText">-</span></p>
+        </div>
+
+        <button id="copyGlyph">Copiar Glyph</button>
+        <button id="deleteSlotBtn">Borrar Imagen</button>
+
+        <div class="preview-box">
+          <h3>PREVIEW</h3>
+          <div id="chatPreview">Chat: -</div>
+          <div id="actionbarPreview">Actionbar: -</div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
